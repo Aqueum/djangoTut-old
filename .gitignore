@@ -1,0 +1,7 @@
+# Admin files
+/.vagrant
+/.idea
+*console.log
+
+# Legacy files
+/mysiteroot-April17
