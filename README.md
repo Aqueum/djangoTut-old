@@ -6,6 +6,10 @@
   - create new folder, I called mine `djangoTut`
   - navigate to new folder in terminal
   - `vagrant init ubuntu/xenial64`
+  - edit vagrant file
+    - uncomment `# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+`
+    - change port `8080` to `8000` as that's what the django development server uses
   - `vagrant up`
   - `vagrant ssh` to SSH into your new box
   
@@ -33,3 +37,13 @@
   - 
   
 
+
+
+
+# To launch
+- in terminal navigate to the folder with your vm
+- `vagrant up`
+- `vagrant ssh`
+- `cd /vagrant/mysite`
+- `source ../ENV/bin/activate`
+- `python manage.py runserver`
