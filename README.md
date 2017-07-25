@@ -37,7 +37,7 @@
 - `django-admin startproject mysite` to create django settings, database configuration & file structure
 - check project working
   - `cd /vagrant/mysite`
-  - `python manage.py runserver` run lightweight **non-production** development server
+  - `python manage.py runserver` to run lightweight **non-production** development server
   - 
   
 
@@ -51,3 +51,6 @@
 - `cd /vagrant/mysite`
 - `source ../ENV/bin/activate`
 - `python manage.py runserver`
+
+
+vagrant reload
