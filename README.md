@@ -58,6 +58,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
 ]`  
+- add url pattern `url(r'^polls/', include('polls.urls')),` and `from django.conf.urls import include` to mysite/urls.py
 
 
 
