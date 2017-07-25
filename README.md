@@ -1,7 +1,7 @@
 # djangoTut setup
 
 ## Setup vagrant box
-- Pick box from [Vagrant](https://app.vagrantup.com/boxes/search?_ga=2.235591302.605526645.1500926823-1879209973.1499723689)
+- Pick box from [Vagrant](https://app.vagrantup.com/boxes/)
 - I chose [ubuntu/xenial64](https://app.vagrantup.com/ubuntu/boxes/xenial64)
   - create new folder, I called mine `djangoTut`
   - I added the path to djangoTut as an alias called djangoTut by:
@@ -14,7 +14,7 @@
 `
     - change ports `80` and `8080` to `8000` as that's what the django development server uses
     - so you now have `config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1`
-  - `vagrant up`
+  - `vagrant reload` to load the new vagrant file
   - `vagrant ssh` to SSH into your new box
   
 ## Install Django
@@ -37,8 +37,13 @@
 - `django-admin startproject mysite` to create django settings, database configuration & file structure
 - check project working
   - `cd /vagrant/mysite`
-  - `python manage.py runserver` to run lightweight **non-production** development server
-  - 
+  - `python manage.py runserver 0.0.0.0:8000` to run lightweight **non-production** development server - [here's why 0.0.0.0.:8000](https://stackoverflow.com/questions/33129651/access-web-server-on-virtualbox-vagrant-machine-from-host-browser)
+  
+## Create app
+- ctrl-c to exit server
+- `cd /vagrant/mysite` to get to folder with manage.py
+- `python manage.py startapp polls` to create polls app starter
+
   
 
 
@@ -50,7 +55,4 @@
 - `vagrant ssh`
 - `cd /vagrant/mysite`
 - `source ../ENV/bin/activate`
-- `python manage.py runserver`
-
-
-vagrant reload
+- `python manage.py runserver 0:8000`
