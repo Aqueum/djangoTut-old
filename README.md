@@ -1,4 +1,4 @@
-# djangoTut
+# djangoTut setup
 
 ## Setup vagrant box
 - Pick box from [Vagrant](https://app.vagrantup.com/boxes/search?_ga=2.235591302.605526645.1500926823-1879209973.1499723689)
