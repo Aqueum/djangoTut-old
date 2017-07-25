@@ -4,12 +4,16 @@
 - Pick box from [Vagrant](https://app.vagrantup.com/boxes/search?_ga=2.235591302.605526645.1500926823-1879209973.1499723689)
 - I chose [ubuntu/xenial64](https://app.vagrantup.com/ubuntu/boxes/xenial64)
   - create new folder, I called mine `djangoTut`
+  - I added the path to djangoTut as an alias called djangoTut by:
+    - nano .bash_profile
+    - add the line: `alias djangoTut='cd "/Users/PATH_TO_YOUR_DJANGOTUT_FOLDER"'
   - navigate to new folder in terminal
   - `vagrant init ubuntu/xenial64`
   - edit vagrant file
     - uncomment `# config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 `
-    - change port `8080` to `8000` as that's what the django development server uses
+    - change ports `80` and `8080` to `8000` as that's what the django development server uses
+    - so you now have `config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1`
   - `vagrant up`
   - `vagrant ssh` to SSH into your new box
   
@@ -41,7 +45,7 @@
 
 
 # To launch
-- in terminal navigate to the folder with your vm
+- in terminal `djangoTut` or navigate to the folder with your vm
 - `vagrant up`
 - `vagrant ssh`
 - `cd /vagrant/mysite`
