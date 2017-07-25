@@ -3,6 +3,7 @@
 .idea/
 *console.log
 .DS_Store
+ENV/
 
 # Legacy files
 /mysiteroot-April17
